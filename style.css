@@ -41,3 +41,8 @@
 .boxType3 {
   background: blue;
 }
+
+.puppy {
+  background-image: url(https://dogs.thefuntimesguide.com/files/black-lab-puppy-with-new-dog-toys.jpg);
+  background-size: 100% 100%; 
+}
