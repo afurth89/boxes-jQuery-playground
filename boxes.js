@@ -19,4 +19,16 @@ function docReady() {
 
   //4. Change all red boxes to white.
   $('.boxType1').css('background', 'white');
+
+  //5. Get the first two divs in the second row. Take away all styling from the divs.
+  $('#row2 > .box:lt(2)').removeClass('box boxType2 boxType3');
+
+  //6. Get all divs inside the container that are not row divs and are not the secret box div. 
+  //Set the width of the divs to 2 pixels.
+  $('div > div > div:not(#secretBox)'.css('width', '2px'));
+  var nonSecretBoxes = $('div > div > div:not(#secretBox)');
+  nonSecretBoxes.css('width', '2px');
+
+  //EXERCISE 3
+  
 }
