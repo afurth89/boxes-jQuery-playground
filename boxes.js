@@ -44,11 +44,33 @@ function docReady() {
     alert("Ha Ha Ha. You can NEVER leave the page");
   });
 
-  //3. For all box divs, add a click handler that adds an image of a cute puppy to the box. 
-  //If the image is clicked again, remove the cute puppy.
+  // 3. For all box divs, add a click handler that adds an image of a cute puppy to the box. 
+  // If the image is clicked again, remove the cute puppy.
   var boxes = $('.box');
   boxes.on('click', function() {
     //See style.css for 'puppy' class
     $(this).toggleClass("puppy");
   });
+
+  //4. Write a click handler on the container div. The click handler should turn the container background 
+  //to black and the background of the original div that was clicked to white. If the user original div 
+  //that was clicked happened to be the container div, change the background of the container div to 
+  //lime green. You should not use any selectors for this exercise. You can do it completely with what 
+  //is given to you in the event callback.
+  var container = $('#container');
+  container.on('click', function(event) {
+    var that = $(this);
+
+    //If what is clicked (event.target) is the container itself (that)
+    if ($(event.target).is(that)) {
+      that.css('backgroundColor', 'lime');
+
+      //If what's clicked is not the container, it must be an inner div
+    } else {
+      that.css('backgroundColor', 'black');
+      $(event.target).css('backgroundColor', 'white');
+    } 
+
+  });
+
 }
